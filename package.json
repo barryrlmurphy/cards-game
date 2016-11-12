@@ -12,12 +12,22 @@
   },
   "keywords": [
     "cards",
-    "game"
+    "game",
+    "javascript"
   ],
   "author": "Barry Murphy",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/barryrlmurphy/cards-game/issues"
   },
-  "homepage": "https://github.com/barryrlmurphy/cards-game#readme"
+  "homepage": "https://github.com/barryrlmurphy/cards-game#readme",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "eslint-config-google": "^0.7.0",
+    "gulp-eslint": "^3.0.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-sass": "^2.3.2"
+  }
 }

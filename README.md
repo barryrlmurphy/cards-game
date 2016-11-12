@@ -1,0 +1,3 @@
+# A little cards game 
+
+## Hack game for testing ...

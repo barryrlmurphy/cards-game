@@ -2,19 +2,21 @@ var gulp = require('gulp');
 var sass = require("gulp-sass");
 var notify = require("gulp-notify");
 var eslint = require("gulp-eslint");
+var serve = require("gulp-serve");
 
 const paths = {
   scssSrc: 'styles/sass/**/*.scss',
   cssDist: 'styles/css/',
-  jsSrc: 'js/**/*.js',
+  jsAllSrc: 'js/**/*.js',
+  jsAppSrc: 'js/app/**/*.js',
 };
 
-gulp.task('dev', ['watch', 'build']);
+gulp.task('dev', ['watch', 'build', 'serve']);
 
 gulp.task('watch', function() {
   gulp.watch([
     paths.scssSrc,
-    paths.jsSrc
+    paths.jsAppSrc
   ], ['lint', 'build']);
 });
 
@@ -29,10 +31,12 @@ gulp.task('generate-styles', function() {
 
 gulp.task('lint', function() {
     return gulp.src([
-  		paths.jsSrc,
+  		paths.jsAppSrc,
   		'!node_modules/**'
     ])
   		.pipe(eslint())
   		.pipe(eslint.format())
 		.pipe(eslint.failAfterError())
 });
+
+gulp.task('serve', serve());

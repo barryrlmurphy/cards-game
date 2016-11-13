@@ -28,6 +28,7 @@
     "eslint-config-google": "^0.7.0",
     "gulp-eslint": "^3.0.1",
     "gulp-notify": "^2.2.0",
-    "gulp-sass": "^2.3.2"
+    "gulp-sass": "^2.3.2",
+    "gulp-serve": "^1.4.0"
   }
 }

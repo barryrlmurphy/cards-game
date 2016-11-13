@@ -5,15 +5,16 @@ var gameState = {
 	// load game assets before game starts
 	preload: function() {
 		this.load.image('background', 'images/game-map-large.jpg');
-		this.load.image('boat', 'images/boat.svg');
 		this.load.image('character', 'images/army-1.png');
 	},
 	// execute after everything is loaded
 	create: function() {
 		this.background = this.game.add.sprite(0, 0, 'background');
+		this.background.scale.setTo(1.5);
 		console.log(this.game.world);
-		game.world.setBounds(0, 0, 7107, 5321);
-		this.character = this.game.add.sprite(6900, 200, 'character');
+		// game.world.setBounds(0, 0, 7107, 5321);
+		game.world.setBounds(0, 0, 10660, 7981);
+		this.character = this.game.add.sprite(10390, 270, 'character');
 		this.character.anchor.setTo(0.5,0.5);
 		this.character.scale.setTo(0.3); // use minus number to flip the image
 
@@ -43,6 +44,10 @@ var gameState = {
 			game.camera.x += 2;
 		}
 		
+	},
+	render: function() {
+    	game.debug.cameraInfo(game.camera, 32, 32);
+    	game.debug.spriteCoords(this.character, 32, 500);
 	},
 	move: function(object, distance){
 		object.x = object.x + distance * Math.cos(object.rotation);
